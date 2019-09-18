@@ -1,0 +1,165 @@
+"""
+h1.py
+Ethan Jarzombek
+Mar 25, 2018
+"""
+
+
+from math import pi
+from random import randint
+
+
+#####################################
+
+
+print("\n~~~~CIRCLE AREA~~~~")
+
+def circle_area(radius):
+    """
+    Calculate the area of a circle with given radius
+    radius: non-negative float
+    Returns: float
+    """
+
+    radius_float = float(radius)
+
+    if radius_float < 0:
+        print("The radius {} is invalid. Try again." .format(radius))
+
+    else:
+        area_of_circle = pi * radius_float**2
+        print("The radius {} has the area: {}." .format(radius, area_of_circle))
+
+circle_area(4)
+circle_area(0)
+circle_area(-6)
+
+
+########################################
+
+
+print("\n~~~~MILES PER GALLON~~~~")
+
+def miles_per_gallon(miles, gallons):
+    """
+    Calcuate miles per gallons
+    miles: positive float
+    gallons: positive float
+    Returns: float
+    """
+    
+    miles_float = float(miles)
+    gallons_float = float(gallons)
+
+    if miles_float or gallon_float > 0:
+        mpg = miles_float / gallons_float
+        print("Your car is getting {} miles per gallon." .format(mpg))
+
+    else: 
+        print("You entered a negative value. Try again.")
+
+miles_per_gallon(50, 29)
+miles_per_gallon(80, 20)
+miles_per_gallon(12, 12)
+
+
+
+print("")#########################################
+
+
+print("~~~~IS EVEN~~~~")
+
+def is_even(number):
+    """
+    Check if number is even
+    number: integer
+    Returns: True if number is even, False otherwise
+    """
+
+    number_float = int(number)
+
+    if number % 2 == 0:
+        print("The number {} is even." .format(number_float))
+    else:
+        print("The number {} is odd." .format(number_float))
+    
+
+is_even(4)
+is_even(0)
+is_even(3)
+
+
+##########################################
+
+
+print("\n~~~~TEN RANDOM NUMBERS~~~~")
+
+def ten_random_numbers(start, stop):
+    """
+    Returns ten random integers between start and stop
+    """
+
+    t = [ ]
+
+    if start < stop:
+        for count in range(10):
+            t.append(randint(start, stop))
+        print("Ten random integers between {} and {}: " .format(start, stop),t)
+    else:
+        print("Your starting int is larger than your ending int. Try again.")
+
+
+ten_random_numbers(0, 10)
+ten_random_numbers(4, 10)
+ten_random_numbers(10, 0)
+
+
+############################################
+
+
+print("\n~~~~SUM OF ODD TO~~~~")
+
+def sum_of_odd_to(n):
+    """
+    Calculate the sum of all odd numbers from 1 to n, including n
+    n: positive integer
+    Returns: integer
+    """
+
+    total = 0
+    for num in range(1, n + 2, 2):
+        total = total + num
+    print("The sum of odd numbers from 1 to {} is:" .format(n), total)
+
+sum_of_odd_to(4)
+sum_of_odd_to(0)
+sum_of_odd_to(7)
+
+
+#############################################
+
+
+print("\n~~~~AVERAGE RANDOM 1-10~~~~")
+
+def average_random_1_to_10(n):
+    """
+    Calcuate the average of random numbers between 1 and 10 (inclusive) 
+    geneerated n times
+    n: positive integer - how many times random numbers are generated
+    Returns: integer
+    """
+
+    if n > 0:
+        total = 0
+        for count in range (n + 1):
+            total = total + randint(1, 10)
+        avg = total / n
+        print("The average of random numbers between 1 and 10,")
+        print("\tgenerated {} times is: {}." .format(n, avg))
+    
+    else:
+        print("The number {} is invalid. Try again." .format(n))
+
+average_random_1_to_10(4)
+average_random_1_to_10(0)
+average_random_1_to_10(1000)
