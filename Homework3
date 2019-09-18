@@ -1,0 +1,164 @@
+"""
+h3.py
+Ethan Jarzombek
+May 5, 2018
+"""
+#############################################
+
+print("\n~~~~MAP LIST~~~~")
+
+def map_list(num_list):
+	"""
+	- Applies mapping pattern to a list data structure.
+	- num_list: list of numbers
+	- return: a new list containing the opposite numbers in the same order.
+
+	DOCTEST:
+	test case 1:
+	>>> map_list([4, 7, 5, 2, 8])
+	[-4, -7, -5, -2, -8]
+
+	test case 2:
+	>>> map_list([-6, -1, -9, -7, -4])
+	[6, 1, 9, 7, 4]
+
+	test case 3:
+	>>> map_list([3, -5, 1, 0, -2])
+	[-3, 5, -1, 0, 2]
+	"""
+	mapped_list = []
+	for num in num_list:
+		if num > 0 or num < 0:
+			num = num * -1.
+		else:
+			num = 0
+
+		mapped_list.append(int(num))
+	
+	print(mapped_list)
+	return mapped_list
+
+map_list([4, 7, 5, 2, 8])
+map_list([-6, -1, -9, -7, -4])
+map_list([3, -5, 1, 0, -2])
+
+
+#############################################
+
+print("\n~~~~FILTER LIST~~~~")
+
+def filter_list(word_list):
+	"""
+	- Applies filter pattern to a list data structure.
+	- word_list: list of strings
+	- return: a new list that contains only letters.
+
+	DOCTEST:
+	test case 1:
+	>>>filter_list(['3', 'e', '4', 't', 'h', 'a', 'n'])
+	['e','t','h','a','n']
+
+	test case 2:
+	>>>filter_list(['1','4','8,'3'])
+	[]
+
+	test case 3:
+	>>>filter_list(['letters', 'let1', 'let2', '48'])
+	['letters']
+
+	"""
+	filtered_list = []
+	for word in word_list:
+		if word.isalpha( ):
+			filtered_list.append(word)
+
+	print(filtered_list)
+	return filtered_list
+
+filter_list(['3', 'e', '4', 't', 'h', 'a', 'n'])
+filter_list(['1','4','8','3'])
+filter_list(['letters', 'let1', 'let2', '48'])
+
+#############################################
+
+print("\n~~~~REDUCE LIST~~~~")
+
+def reduce_list(num_list):
+	"""
+	- Applies reduce pattern to a list of numbers.
+	- num_list: integer
+	- return: sum of numbers in num_list
+
+	DOCTEST:
+	test case 1:
+	>>> reduce_list([3, 7, 8, 2])
+	[20]
+
+	test case 2:
+	>>> reduce_list([])
+	0
+
+	test case 3:
+	>>> reduce_list([3, -1, -5, 6, -2])
+	[1]
+
+	"""
+	sum_of_nums = 0
+	for num in num_list:
+		sum_of_nums = sum_of_nums + num
+	print(sum_of_nums)
+	return sum_of_nums
+
+reduce_list([3, 7, 8, 2])
+reduce_list([])
+reduce_list([3, -1, -5, 6, -2])
+
+#############################################
+
+print("\n~~~~MAP DICTIONARY~~~~")
+
+def map_dict(dictionary):
+	"""
+	- Applies mapping pattern to a dictionary data structure.
+	- dictionary: keys are strings, values are numerical
+	- return: the opposite of dictionary called opposite_dict.
+
+	DOCTEST:
+	test case 1:
+	>>> d = {'honda': 1, 'bmw': 2, 'ferrari': 3, 'lamborghini': 4}
+	>>> map_dict(d))
+	{'honda': -1, 'bmw': -2, 'ferrari': -3, 'lamborghini': -4}
+
+	test case 2:
+	>>> d = {'blue': 5, 'green': 2, 'red': 2, 'yellow': 4}
+	>>> map_dict(d)
+	{'blue': -1, 'green': -2, 'red': -3, 'yellow': -4}
+
+	test case 3:
+	>>> d = {'taco': -4, 'hamburger': 3, 'spare ribs': -2, 'steak': 1}
+	>>> map_dict(d)
+	{'taco': 4, 'hamburger': -3, 'spare rips': 2, 'steak': -1}
+
+
+	"""
+
+	opposite_dict = []
+	for value in dictionary:
+		if value > 0 or value < 0:
+			value = value * -1.
+		else:
+			value = 0
+
+	print(opposite_dict)
+	return(opposite_dict)
+
+d = {'honda': 1, 'bmw': 2, 'ferrari': 3, 'lamborghini': 4}
+map_dict(d)
+
+#############################################
+
+"""
+if __name__ == '__main__':
+	import doctest
+	doctest.testmod()
+"""
