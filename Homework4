@@ -1,0 +1,88 @@
+"""
+h4.py
+Ethan Jarzombek
+May 8, 2018
+"""
+#############################################
+
+print("~~~H4 IS READY FOR ACTION!~~~\n")
+
+def count_empty_lines(source):
+	"""
+	Counts empty lines in the text file named source
+	source: string - name of text file opened for reading
+	returns: integer - number of empty lines
+	"""
+
+	fin = open(source, 'r') # create file object fin for reading.
+	
+	num_empty_lines = 0		# stores the result
+
+	for line in fin:		# iterate through each line in fin.
+		# increment num_lines
+		if not line.split():
+			num_empty_lines = num_empty_lines + 1
+	fin.close( )			# close file object.
+
+
+	return num_empty_lines
+
+
+#############################################
+
+
+def count_at_start(word, source):
+	"""
+	Counts occurrences of word at the start of lines in file source.
+	word: string
+	source: string - name of text file opened for reading
+	returns: integer - number of matches
+	"""
+
+	fin = open(source, 'r')		# Open source file
+
+	num_words = 0				# Counter for number of occurrences of word in the source file.
+
+	#Iterate through fin with a line loop variable
+	for line in fin:
+		list_of_words = line.split( )	# creats a list of words for each line.
+		# Test if word is in list_of_words, in which case increment num_words
+		for a_word in list_of_words:
+			if a_word == word and a_word == list_of_words[0]:
+				num_words = num_words + 1
+	fin.close( )				# Close the source file
+
+
+	return num_words
+
+
+#############################################
+
+
+def every_other(source):
+	"""
+	Displays every other word from file source (deciphering the code).
+	source: string - name of text file opened for reading
+	returns: string of words
+
+	"""
+
+	fin = open(source, 'r')	# Open source file
+
+	new_text = []	# create new text to store every other word in source.
+
+	for line in fin:	# Iterate through source file line by line.
+		list_of_words = line.split()	# create list of words for each line.
+		message = list_of_words[::2]	# increment list of words by 2 and assign to message.
+		print(message)					# print the new message
+		new_text.append(message)		# populate the new_text list with the new messages.
+#####CANT FIGURE OUT HOW TO MAKE A LIST OF LISTS INTO A STRING#####
+#		results = ''.join(new_text)
+
+
+	fin.close( )	# close source file
+		
+
+	return new_text
+
+#############################################
